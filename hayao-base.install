@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+post_install () {
+    systemctl enable lightdm-plymouth
+    systemctl enable NetworkManager
+}
+
+post_remove () {
+    systemctl disable lightdm-plymouth
+    systemctl disable NetworkManager
+}

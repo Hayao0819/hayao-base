@@ -1,0 +1,84 @@
+alignment top_right
+own_window_argb_visual true
+own_window_argb_value 180
+border_width 1
+cpu_avg_samples 2
+default_color white
+default_outline_color white
+default_shade_color white
+draw_borders no
+draw_graph_borders yes
+draw_outline no
+draw_shades no
+override_utf8_locale yes
+use_xft yes
+xftfont TakaoGothic:style=Regular:size=12
+gap_x 0
+gap_y 10
+minimum_size 320 5
+maximum_width 500
+net_avg_samples 2
+no_buffers yes
+out_to_console no
+out_to_stderr no
+extra_newline no
+own_window yes
+own_window_class Conky
+own_window_type desktop
+stippled_borders 0
+update_interval 0.2
+uppercase no
+use_spacer none
+show_graph_scale no
+show_graph_range no
+double_buffer yes
+own_window_type normal
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+background yes
+own_window_transparent no
+own_window_colour black
+width 600
+
+
+TEXT
+${font Sans:size=18}$alignc${time %Y年 %m月 %d日 %a}${font}
+${font Ubuntu:size=33}$alignc${time %H:%M:%S}${font}
+$hr
+${color white}起動時間:$color $uptime
+${color white}クロック:$color $freq
+${color white}　メモリ:$color $mem/$memmax - $memperc%
+$alignc${membar 5,300}
+${color white}スワップ:$color $swap/$swapmax - $swapperc%
+$alignc${swapbar 5,300}
+${color ff5000}CPU  :${cpu} %
+$alignc${cpubar 5,300}
+$alignc${color white}${cpugraph cpu0 32,300 0000ff ff0000}
+${color 33ff33}CPU1 ${cpu cpu1}% ${alignr} ${execi 5 sensors -u coretemp-isa-0000 | grep 'temp2_input' | cut -c16-17}℃ 
+$alignc${cpubar cpu1 5,300}
+${color 33ff33}CPU2 ${cpu cpu2}% ${alignr} ${execi 5 sensors -u coretemp-isa-0000 | grep 'temp3_input' | cut -c16-17}℃ 
+$alignc${cpubar cpu2 5,300}
+${color 33ff33}CPU3 ${cpu cpu3}% ${alignr} ${execi 5 sensors -u coretemp-isa-0000 | grep 'temp4_input' | cut -c16-17}℃ 
+$alignc${cpubar cpu3 5,300}
+${color 33ff33}CPU4 ${cpu cpu4}% ${alignr} ${execi 5 sensors -u coretemp-isa-0000 | grep 'temp5_input' | cut -c16-17}℃ 
+$alignc${cpubar cpu4 5,300}
+${color white}Processes:$color $processes  ${color white}Running:$color $running_processes
+
+Network
+Down speed ${downspeed enp3s0}/s${alignr}total ${totaldown enp3s0}
+Up   speed ${upspeed enp3s0}/s${alignr}total ${totalup enp3s0}
+${alignc}${downspeedgraph enp3s0 32,150 0000ff ff0000}${upspeedgraph enp3s0 32,150 0000ff ff0000}
+${color white} Name              PID   CPU%   MEM%
+${color white} ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
+${color white} ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
+${color white} ${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
+${color white} ${top name 4} ${top pid 4} ${top cpu 4} ${top mem 4}
+${color white} ${top name 5} ${top pid 5} ${top cpu 5} ${top mem 5}
+${color white} ${top name 6} ${top pid 6} ${top cpu 6} ${top mem 6}
+${color white} ${top name 7} ${top pid 7} ${top cpu 7} ${top mem 7}
+${color white} ${top name 8} ${top pid 8} ${top cpu 8} ${top mem 8}
+${color white} ${top name 9} ${top pid 9} ${top cpu 9} ${top mem 9}
+# ${color white} ${top name 10} ${top pid 10} ${top cpu 10} ${top mem 10}
+$hr
+${color grey}Desktop:$alignc${color red}${font Ubuntu:size=19}${desktop}$color / ${desktop_number}${font}
+
+

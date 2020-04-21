@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+
+alias gksu='pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY $@'
+
+
+alias build-normal='sudo /home/hayao/Git/archiso-helper/archlinux-builder.sh /home/hayao/build-archlinux/configs/normal'
+alias build-lts='sudo /home/hayao/Git/archiso-helper/archlinux-builder.sh /home/hayao/build-archlinux/configs/lts'
+
+
+alias build-alter='sudo /home/hayao/build-alter/build-alter'
+alias build-alter-test='sudo /home/hayao/build-alter/build-alter-test'
+alias build-alter-lts='sudo /home/hayao/build-alter/build-alter-lts'
+alias build-alter-kde-test='sudo /home/hayao/build-alter/build-alter-kde-test'
+
+alias alter-source='cp -r /home/hayao/Git/alterlinux /home/hayao/Desktop/ ; cd /home/hayao/Desktop/alterlinux'
+
+alias ssh-sunset='ssh hayao@s.0u0.biz -p 65535 -i ~/.ssh/id_rsa'
+alias ssh-git='ssh -p 65533 hayao@192.168.1.30'
+alias ssh-file='ssh -p 65535 hayao@192.168.1.20'
+alias ssh-yamad='ssh -Y -C  hayao@xn--d-8o2b.com -p 65530 -i ~/.ssh/id_rsa'
+alias ssh-tokienoki='ssh -i ~/.ssh/tokienoki.pem r3691265@www65.onamae.ne.jp -p 8022'
+
+alias ls='lsd'
+# alias ll='lsd -l'
+
+alias wine64='WINEPREFIX=~/Wine/64 WINEARCH=win64'
+alias wine32='WINEPREFIX=~/Wine/32 WINEARCH=win32'
+alias wine64t='WINEPREFIX=~/Wine/64-test WINEARCH=win64'
+alias winestatus='echo -e "WINEPREFIX is ${WINEPREFIX}\nWINEARCH is ${WINEARCH}"'
+
+alias phpserver='sudo php -S localhost:80'
+alias phpbrows='google-chrome http://localhost:80'
